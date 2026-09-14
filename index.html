@@ -42,7 +42,7 @@
 
       <section id="glyphs" aria-labelledby="glyphs-title">
         <div class="section-head"><h2 id="glyphs-title"><span>02</span>글자 하나의 다른 얼굴.</h2><p>큰 글자는 견본, 작은 글자는 원문.<br>누르면 위에서 크게 볼 수 있습니다.</p></div>
-        <div class="glyph-tools"><div class="glyph-filters"><label for="category-filter">종류 <select id="category-filter"><option value="all">전체</option><option value="hangul">한글 음절</option><option value="latin">영문</option><option value="digits">숫자</option><option value="symbols">기호·기타</option></select></label><label for="initial-filter">초성 <select id="initial-filter"><option value="all">전체</option></select></label><label for="glyph-search">찾기 <input id="glyph-search" type="search" maxlength="200" placeholder="안녕 A 3 ! 또는 U+AC00" spellcheck="false" autocomplete="off" aria-describedby="search-help"></label><button id="filter-reset" class="text-button" type="button">전체 보기</button></div><p id="range-state" class="range-state" aria-live="polite">지원 문자 목록을 확인 중입니다.</p></div>
+        <div class="glyph-tools"><div class="glyph-filters"><label for="category-filter">종류 <select id="category-filter"><option value="all">전체</option><option value="hangul" selected>한글 음절</option><option value="latin">영문</option><option value="digits">숫자</option><option value="symbols">기호·기타</option></select></label><label for="initial-filter">초성 <select id="initial-filter"><option value="all">전체</option></select></label><label for="glyph-search">찾기 <input id="glyph-search" type="search" maxlength="200" placeholder="안녕 A 3 ! 또는 U+AC00" spellcheck="false" autocomplete="off" aria-describedby="search-help"></label><button id="filter-reset" class="text-button" type="button">전체 보기</button></div><p id="range-state" class="range-state" aria-live="polite">지원 문자 목록을 확인 중입니다.</p></div>
         <p class="grid-note" id="search-help">여러 글자를 입력하면 각각을 모아 봅니다. ㄱ 같은 초성으로도 찾을 수 있습니다. 실제 지원 문자만 96자씩 표시합니다.</p>
         <p class="load-placeholder" id="grid-placeholder">글꼴이 적용되면 각 칸에 견본이 나타납니다.</p><div id="glyph-grid" class="glyph-grid" aria-label="지원 문자 견본"></div><p id="empty-results" class="empty-results" hidden>조건에 맞는 문자가 없습니다. 종류나 검색어를 바꿔 보세요.</p>
         <div class="pagination"><div class="pagination-controls"><button id="previous-page" type="button" disabled>← 이전</button><span id="page-count" aria-live="polite">—</span><button id="next-page" type="button" disabled>다음 →</button></div><form id="page-jump" class="page-jump"><label for="page-number">페이지</label><input id="page-number" type="number" min="1" value="1" inputmode="numeric" disabled><button type="submit" disabled>이동</button></form></div>
@@ -58,4 +58,3 @@
   </div>
 </body>
 </html>
-
