@@ -17,12 +17,15 @@ def main():
     if output.exists():
         shutil.rmtree(output)
     output.mkdir()
-    files = [ROOT / "index.html", ROOT / ".nojekyll", ROOT / "PROVENANCE.md", *font_files]
+    files = [ROOT / "index.html", ROOT / "PROVENANCE.md", *font_files]
     files.extend(path for path in (ROOT / "assets").rglob("*") if path.is_file())
     for source in files:
         destination = output / source.relative_to(ROOT)
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, destination)
+    # .nojekyll is an optional hidden source file. Create it in the Pages
+    # artifact so a web upload that omitted hidden files still deploys safely.
+    (output / ".nojekyll").write_text("", encoding="utf-8")
     config = {"repository": repository}
     (output / "site-config.js").write_text("window.NOTHUMAN_SITE_CONFIG = Object.freeze(" + json.dumps(config) + ");\n", encoding="utf-8")
     print(json.dumps({"output": str(output), "repository": repository, "files": len(files) + 1, "published": False}, ensure_ascii=False))
