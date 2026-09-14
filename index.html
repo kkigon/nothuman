@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="휴먼아님명조체. AI가 조금 이상하게 쓴 글자를 즐기는 무료 글꼴. 한글, 영어, 숫자와 기호를 직접 써 보고 내려받으세요.">
+  <title>휴먼아님명조체 · NotHumanMyeongjo</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="site-config.js" defer></script>
+  <script type="module" src="assets/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#tester">글꼴 직접 써보기로 이동</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="#top">휴먼아님명조체<span class="brand-dot" aria-hidden="true"></span></a>
+      <nav class="nav" aria-label="사이트 메뉴"><a href="#tester">직접 써보기</a><a href="#glyphs">문자 탐색</a><a href="#download">무료 다운로드</a><button id="theme-toggle" class="theme" type="button" aria-pressed="false"><span aria-hidden="true">◐</span> <span id="theme-label">어두운 배경</span></button></nav>
+    </header>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">NOTHUMANMYEONGJO · 익숙한 글자의 이상한 표정</p>
+        <p class="hero-word font-output" aria-hidden="true">휴먼아님명조체</p>
+        <div class="hero-bottom"><h1 id="hero-title">사람이 쓴 듯,<br>사람이 쓰지 않은.</h1><p class="hero-copy">“아, 이 글자를 이렇게 잘못 썼구나.”<br>겹친 획, 빠진 조각, 엉뚱한 덧붙임.<br><strong>익숙한 실루엣에 AI의 서툰 손길을 남겼습니다.</strong><br>포스터 한 줄에도, 별것 아닌 인사에도 써 보세요.</p></div>
+      </section>
+      <dl class="manifest"><div><dt>지원 문자</dt><dd id="repertoire-count">확인 중</dd></div><div><dt>글꼴 파일</dt><dd>TTF · WOFF2</dd></div><div><dt>사용하기</dt><dd>무료 다운로드 · <a href="FONT-LICENSE.txt">이용 조건</a></dd></div></dl>
+      <p class="font-state" id="font-state" role="status">글꼴을 불러오는 중입니다. 적용되면 견본이 나타납니다.</p>
+      <noscript><p class="font-state error">직접 써보기와 다운로드 집계는 JavaScript가 필요합니다. <a href="fonts/NotHumanMyeongjo-Regular.ttf" download>TTF 파일 직접 받기</a>는 가능합니다.</p></noscript>
+
+      <section id="tester" aria-labelledby="tester-title">
+        <div class="section-head"><h2 id="tester-title"><span>01</span>말은 그대로, 모양은 엉뚱하게.</h2><p>원문과 나란히 보면<br>어디가 틀렸는지 더 재미있습니다.</p></div>
+        <div class="tester">
+          <div class="presets" role="group" aria-label="예문 선택"><button type="button" data-preset="0" aria-pressed="true">첫인사</button><button type="button" data-preset="1" aria-pressed="false">한글</button><button type="button" data-preset="2" aria-pressed="false">English</button><button type="button" data-preset="3" aria-pressed="false">0123456789</button><button type="button" data-preset="4" aria-pressed="false">기호들</button><button type="button" data-preset="5" aria-pressed="false">함께 쓰기</button></div>
+          <div class="input-row"><label for="type-input">입력할 문장</label><div><textarea id="type-input" class="text-input" rows="2" maxlength="1200" spellcheck="false" aria-describedby="input-help coverage-summary">안녕, 나는
+휴먼이 아닙니다.</textarea><p id="input-help" class="input-meta"><span id="char-count">0</span> / 1,200자</p></div></div>
+          <div class="toolbar"><div class="controls"><label class="slider-label" for="font-size"><span>글자 크기</span><input id="font-size" type="range" min="24" max="180" value="88"><output for="font-size" id="font-size-value">88 px</output></label><label class="slider-label" for="letter-spacing"><span>자간</span><input id="letter-spacing" type="range" min="-8" max="24" value="0"><output for="letter-spacing" id="letter-spacing-value">0 px</output></label></div><button class="text-button" id="reset" type="button">처음 상태로</button></div>
+          <div class="original-row"><span>원문</span><p id="compare-original"></p></div>
+          <div class="preview-wrap"><p class="preview-label"><strong>휴먼아님명조체</strong><span>입력한 문자는 바뀌지 않습니다.</span></p><p class="load-placeholder" id="preview-placeholder">글꼴을 불러오는 중입니다.</p><div id="preview" class="type-output font-output" aria-label="입력 문장의 글꼴 견본"></div></div>
+          <div class="coverage" aria-live="polite"><p id="coverage-summary">지원 문자 목록을 확인하고 있습니다.</p><p><span class="legend">주황 밑줄</span> = 이 글꼴에 없는 문자 · 기본 글꼴로 표시</p><div id="missing-list" class="missing-list" hidden></div></div>
+        </div>
+      </section>
+
+      <section id="glyphs" aria-labelledby="glyphs-title">
+        <div class="section-head"><h2 id="glyphs-title"><span>02</span>글자 하나의 다른 얼굴.</h2><p>큰 글자는 견본, 작은 글자는 원문.<br>누르면 위에서 크게 볼 수 있습니다.</p></div>
+        <div class="glyph-tools"><div class="glyph-filters"><label for="category-filter">종류 <select id="category-filter"><option value="all">전체</option><option value="hangul">한글 음절</option><option value="latin">영문</option><option value="digits">숫자</option><option value="symbols">기호·기타</option></select></label><label for="initial-filter">초성 <select id="initial-filter"><option value="all">전체</option></select></label><label for="glyph-search">찾기 <input id="glyph-search" type="search" maxlength="200" placeholder="안녕 A 3 ! 또는 U+AC00" spellcheck="false" autocomplete="off" aria-describedby="search-help"></label><button id="filter-reset" class="text-button" type="button">전체 보기</button></div><p id="range-state" class="range-state" aria-live="polite">지원 문자 목록을 확인 중입니다.</p></div>
+        <p class="grid-note" id="search-help">여러 글자를 입력하면 각각을 모아 봅니다. ㄱ 같은 초성으로도 찾을 수 있습니다. 실제 지원 문자만 96자씩 표시합니다.</p>
+        <p class="load-placeholder" id="grid-placeholder">글꼴이 적용되면 각 칸에 견본이 나타납니다.</p><div id="glyph-grid" class="glyph-grid" aria-label="지원 문자 견본"></div><p id="empty-results" class="empty-results" hidden>조건에 맞는 문자가 없습니다. 종류나 검색어를 바꿔 보세요.</p>
+        <div class="pagination"><div class="pagination-controls"><button id="previous-page" type="button" disabled>← 이전</button><span id="page-count" aria-live="polite">—</span><button id="next-page" type="button" disabled>다음 →</button></div><form id="page-jump" class="page-jump"><label for="page-number">페이지</label><input id="page-number" type="number" min="1" value="1" inputmode="numeric" disabled><button type="submit" disabled>이동</button></form></div>
+      </section>
+
+      <section id="download" class="download-section" aria-labelledby="download-title">
+        <div class="download-copy"><p class="eyebrow">이제, 당신의 문장으로.</p><h2 id="download-title">조금 이상한 글자,<br>마음껏 써 보세요.</h2><p>설치용 TTF와 웹용 WOFF2를 무료로 제공합니다.<br>내려받은 TTF를 더블클릭해 설치하고, 사용 중인 앱에서<br><strong>휴먼아님명조체 / NotHumanMyeongjo</strong>를 선택하세요.</p><p class="license-note">구체적인 사용 범위와 조건은 <a href="FONT-LICENSE.txt">글꼴 이용 조건</a>을 확인해 주세요.</p></div>
+        <div class="download-panel"><a id="release-download" class="download-button" aria-disabled="true" tabindex="-1"><span id="download-label">글꼴 확인 중</span><span aria-hidden="true">↓</span></a><p id="release-state" class="release-state" role="status">다운로드 파일을 확인하고 있습니다.</p><div class="direct-downloads"><a id="direct-ttf" href="fonts/NotHumanMyeongjo-Regular.ttf" download aria-disabled="true" tabindex="-1">TTF만 받기</a><a id="direct-woff" href="fonts/NotHumanMyeongjo-Regular.woff2" download aria-disabled="true" tabindex="-1">WOFF2만 받기</a></div><div class="download-stat"><span>폰트 ZIP 누적 다운로드</span><strong id="download-count">확인 중</strong><small id="download-count-note">공개된 배포 파일의 다운로드 수를 확인합니다.</small></div><p class="count-note">ZIP 다운로드만 집계합니다. TTF·WOFF2 직접 받기는 포함되지 않으며, 고유 사용자나 설치 수를 뜻하지 않습니다.</p></div>
+      </section>
+      <details class="about"><summary>이 글꼴에 대하여</summary><div><p>한눈에는 익숙하지만 자세히 보면 잘못된 글자. AI가 문자를 어설프게 그리던 시절의 표정을 일상에서 쓸 수 있는 글꼴로 옮겼습니다. 획의 겹침과 누락, 뜻밖의 연결을 오류 그대로 즐겨 주세요.</p><p>긴 본문보다는 포스터, 표지, 짧은 제목처럼 글자 모양을 보는 곳에 어울립니다. 문자 탐색기는 배포한 글꼴의 실제 지원 목록을 사용합니다. 목록에 없는 문자는 기본 글꼴과 밑줄로 구분합니다. <a href="fonts/repertoire.json">지원 문자 목록</a></p></div></details>
+    </main>
+    <footer class="footer"><span>휴먼아님명조체 · NotHumanMyeongjo</span><span>사람이 쓰지 않은, 사람을 위한 글자.</span><a href="#top">맨 위로 ↑</a></footer>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "brand": "휴먼아님명조체 / NotHumanMyeongjo",
+  "mappedCodepoints": 11338,
+  "visibleGeneratedCharacters": 11335,
+  "fontCmapEqualsRepertoire": true,
+  "fontFileHashesMatch": true,
+  "presetsChecked": 6,
+  "allPresetCharactersSupported": true,
+  "nodeTests": 15,
+  "publisherMockTests": 10,
+  "htmlReferencesAndAssets": "passed",
+  "sourceAndPagesArtifactChecked": true,
+  "pagesConfigInjection": "passed with temporary example repository only",
+  "releaseZip": {
+    "file": "dist/NotHumanMyeongjo-fonts.zip",
+    "sha256": "b6fdd45c4c26f6dff1f80339e33ead7d6e50b8761ba6d00e1d52f8d60cf0f572",
+    "bytes": 11190008,
+    "manifestEntries": 6,
+    "crc": "passed",
+    "entryHashes": "passed",
+    "deterministicRebuild": true
+  },
+  "githubRepositoryCreated": false,
+  "githubReleasePublished": false,
+  "githubPagesDeployed": false,
+  "browserRuntimeTested": false,
+  "scope": "Static source and real-file checks; mocked API/CLI tests. No browser or live GitHub publication."
+}
