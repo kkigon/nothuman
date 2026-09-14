@@ -139,5 +139,20 @@ $('glyph-search').addEventListener('compositionstart',()=>{searchComposing=true;
 $('filter-reset').addEventListener('click',()=>{searchComposing=false;$('category-filter').value='all';$('initial-filter').value='all';$('glyph-search').value='';updateFilter();});
 $('previous-page').addEventListener('click',()=>{page--;renderGrid();});$('next-page').addEventListener('click',()=>{page++;renderGrid();});
 $('page-jump').addEventListener('submit',event=>{event.preventDefault();const requested=Number($('page-number').value);if(Number.isFinite(requested)){page=Math.floor(requested)-1;renderGrid();}});
+const copyAccountButton=$('copy-account');
+copyAccountButton.hidden=false;
+copyAccountButton.addEventListener('click',async()=>{
+  const status=$('donation-status');
+  copyAccountButton.disabled=true;
+  status.textContent='';
+  try{
+    await navigator.clipboard.writeText($('donation-account').textContent.trim());
+    status.textContent='계좌번호를 복사했습니다. 응원해 주셔서 감사합니다!';
+  }catch{
+    status.textContent='자동 복사가 되지 않았습니다. 위 계좌번호를 직접 선택해 복사해 주세요.';
+  }finally{
+    copyAccountButton.disabled=false;
+  }
+});
 size.value=defaultSize;updateStyle();updateText();updateDownload();
 loadFont();loadDownloads();
