@@ -1,0 +1,45 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read repository
+        uses: actions/checkout@v6
+      - name: Test site logic
+        run: node --test tests/*.test.mjs
+      - name: Test Release safety with mocked CLI
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Prepare static site and repository config
+        run: python3 scripts/prepare_site.py
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+

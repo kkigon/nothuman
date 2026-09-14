@@ -1,0 +1,38 @@
+name: Publish font ZIP
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "새 릴리즈 태그 (예: v1.0.0)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: font-release-${{ inputs.release_tag || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: ${{ inputs.release_tag || github.ref_name }}
+    steps:
+      - name: Read repository
+        uses: actions/checkout@v6
+      - name: Test site logic
+        run: node --test tests/*.test.mjs
+      - name: Test Release safety with mocked CLI
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: Build and verify deterministic font ZIP
+        run: python3 scripts/make_release.py
+      - name: Publish without replacing existing assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/publish_release.py
+
